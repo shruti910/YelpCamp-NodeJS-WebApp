@@ -62,7 +62,12 @@ app.use("/", authRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-//Server starting
-app.listen(3000, function(){
+//Server starting for local
+// app.listen(3000, function(){
+//    console.log("The YelpCamp Server Has Started!");
+// });
+
+//For Heroku
+app.listen(process.env.PORT, process.env.IP, function(){
    console.log("The YelpCamp Server Has Started!");
 });
