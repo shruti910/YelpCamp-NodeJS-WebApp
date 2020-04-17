@@ -16,9 +16,10 @@ var campgroundRoutes = require('./routes/campgrounds'),
  	authRoutes		 = require('./routes/auth')
 
 // DB connection
-//localhost mongoose :mongodb://localhost/yelp_camp
+var url = process.env.DBURL || "mongodb://localhost/yelp_camp";
+//localhost mongoose : "mongodb://localhost/yelp_camp"
 mongoose
-.connect("mongodb+srv://YelpcampDB:Witcher1$@yelpcampdb-jrdpu.mongodb.net/test?retryWrites=true&w=majority", {
+.connect(url, {
 useUnifiedTopology: true,
 useNewUrlParser: true,
 })
